@@ -1,5 +1,5 @@
 
-.pixelify-sans-<uniquifier> {
+pixelify-sans{
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -20,10 +20,6 @@ body {
 	font-family: "Pixelify Sans", sans-serif;
     color:white;
     background-color: #000000;
-}
-{
-  margin: 0;
-  box-sizing: border-box;
 }
 
 .grid-container {
@@ -139,7 +135,5 @@ body {
   }
   
   img {
-    //max-width: 0%;
-    //max-height:0%;
     float: left;
   }
