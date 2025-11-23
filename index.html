@@ -1,17 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Sam Lodges' Portfolio</title>
-
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
-<h1>SAM LODGE</h1>
-<p>gell</p>
-  
+    <!-- HEADER / NAV -->
+    <header>
+        <h1 class="logo">SAM<br>LODGE</h1>
+        <nav>
+            <ul class="menu">
+                <li class="dropdown">GAMES ▼
+                    <ul class="dropdown-content">
+                        <li><a href="#">Game 1</a></li>
+                        <li><a href="#">Game 2</a></li>
+                        <li><a href="#">etc</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">PROTOTYPES ▼
+                    <ul class="dropdown-content">
+                        <li><a href="#">Prototype 1</a></li>
+                        <li><a href="#">Prototype 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">OTHER PROJECTS ▼
+                    <ul class="dropdown-content">
+                        <li><a href="#">Project A</a></li>
+                        <li><a href="#">Project B</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">ABOUT ME</a></li>
+            </ul>
+        </nav>
+
+        <!-- mobile burger removed -->
+    </header>
+
+        <div class="row">
+
+            <!-- Column 1: square then tall -->
+            <div class="column">
+                <a href="games/game1.html" class="container square" style="background-image: url('Assets/game1.png');" aria-label="Game1 "></a>
+                <a href="games/game2.html" class="container tall" style="background-image: url('Assets/FGAJ1.png');" aria-label="FLESH GUN: ADRENALINE JUNKIE></a>
+            </div>
+
+            <!-- Column 2: tall then square (alternating) -->
+            <div class="column">
+                <a href="prototypes/proto1.html" class="container tall" style="background-image: url('Assets/proto1.jpg');" aria-label="Prototype 1"></a>
+                <a href="prototypes/proto2.html" class="container square" style="background-image: url('Assets/proto2.jpg');" aria-label="Prototype 2"></a>
+            </div>
+
+            <!-- Column 3: square then tall -->
+            <div class="column">
+                <a href="other/project-a.html" class="container square" style="background-image: url('Assets/project-a.jpg');" aria-label="Project A"></a>
+                <a href="other/project-b.html" class="container tall" style="background-image: url('Assets/project-b.jpg');" aria-label="Project B"></a>
+            </div>
+
+            <!-- Column 4: tall then square -->
+            <div class="column">
+                <a href="about.html" class="container tall" style="background-image: url('Assets/about.jpg');" aria-label="About"></a>
+                <a href="contact.html" class="container square" style="background-image: url('Assets/contact.jpg');" aria-label="Contact"></a>
+            </div>
+
+        </div>
+
+    <!-- burger menu script removed -->
+
 </body>
 </html>
-
-

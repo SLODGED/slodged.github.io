@@ -1,18 +1,244 @@
+/* FONTS */
 @font-face {
     font-family: "Lexend";
-    src: url("./fonts/Lexend.woff2") format("woff2")
+    src: url("./fonts/Lexend.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Digidither";
-    src: url("./fonts/digidither.otf.woff2") format("woff2")
+    src: url("./fonts/digidither.otf.woff2") format("woff2");
 }
 
-h1 {
-    font-family: "Digidither", sans-serif;
-        color: black;
+:root{
+    /* fallback values; updated by JS on load/resize */
+    --available-height: 600px;
+    --tile-gap: 30px;
 }
+
+/* GENERAL */
+html, body {
+    height: 100%;
+}
+
 body {
+    margin: 0;
+    background: #1A1A1A;
     font-family: "Lexend", sans-serif;
-    color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HEADER */
+header {
+    /* use the same 4-column structure as the main grid so the logo sits
+       exactly the width of one column below it */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding: 20px;
+    gap: var(--tile-gap);
+    position: relative;
+}
+
+.logo {
+    font-family: "Digidither", sans-serif;
+    font-size: 48px;
+    color: #50FF05;
+    text-shadow: 0 0 8px #50FF05;
+    letter-spacing: 2px;
+}
+
+/* Place logo in the first header column so it's same width as one .column below */
+.logo {
+    grid-column: 1 / 2;
+    margin: 0;
+}
+
+/* Make the nav occupy the remaining header columns */
+nav {
+    grid-column: 2 / -1;
+    justify-self: start;
+}
+
+/* NAVIGATION */
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+/* reset ul defaults and keep menu items left-aligned */
+.menu { margin: 0; padding: 0; justify-content: flex-start; }
+
+/* make each menu link easier to tap on mobile */
+.menu li a {
+    display: inline-block;
+    padding: 8px 6px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.menu > li {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Ensure top-level menu items (dropdowns and links) are vertically centered */
+.menu > li { display: flex; align-items: center; }
+
+
+/* DROPDOWNS */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: #1A1A1A;
+    padding: 10px 0;
+    border-radius: 4px;
+    min-width: 120px;
+}
+
+.dropdown-content li {
+    padding: 8px 15px;
+}
+
+.dropdown-content li:hover {
+    background: #bc5d5d;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.row {
+    /* grid layout for 4 columns sized so tiles keep their aspect-ratios
+       We compute column width from available height so square/tall tiles
+       can scale to fill the viewport. --available-height is provided by JS.
+    */
+    display: grid;
+    /* distribute available width evenly across 4 columns and prevent column overflow */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--tile-gap);
+
+    /* let .row expand to fill the remaining space under the header */
+    flex: 1 1 auto;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tile-gap);
+}
+
+/* prevent flex children from forcing column widths (important for long image/content) */
+.row > .column { min-width: 0; min-height: 0; }
+
+/* ensure containers never exceed their column width */
+.container { max-width: 100%; }
+
+.container{
+        display: block;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        border: 8px solid #111;
+        box-sizing: border-box;
+        transition: transform 160ms ease, box-shadow 160ms ease;
+        outline: 4px solid transparent;
+    /* do not flex-grow here — keep natural height from aspect-ratio */
+    flex: 0 0 auto;
+}
+
+.container.square{
+        aspect-ratio: 1 / 1; /* perfect square */
+}
+
+.container.tall{
+        aspect-ratio: 4 / 5; /* taller rectangle */
+}
+
+.container:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        outline-color: #50FF05; /* subtle highlight on hover */
+}
+
+/* If images are missing, keep a neutral background so layout is visible */
+.container[style*="background-image"]:not([style*="url('"]){
+    background-color: #666;
+}
+
+/* Unified mobile breakpoint: combine all mobile behaviors here */
+@media (max-width: 800px) {
+    /* grid becomes 2 columns on narrower screens */
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 12px;
+        gap: 18px;
+    }
+
+    .column {
+        gap: 18px;
+    }
+
+    /* Slightly reduce border on small screens so tiles fit better */
+    .container {
+        border-width: 6px;
+    }
+
+    /* header adjustments: smaller logo and stack header items */
+    .logo{ font-size: 28px; }
+    header {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+    .logo { grid-column: 1; }
+    nav { grid-column: 1; }
+
+    /* mobile menu visible as vertical list */
+    .menu{
+        display: flex;
+        position: static;
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        flex-direction: column;
+        gap: 8px;
+        z-index: auto;
+    }
+
+    /* On mobile, position dropdowns to the right of the menu item instead of covering the menu */
+    .menu .dropdown { position: relative; }
+
+    .menu .dropdown-content {
+        /* place the submenu to the right of the parent menu item */
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin-left: 8px;
+        display: none; /* shown on hover/focus-within */
+        min-width: 140px;
+        z-index: 70;
+    }
+
+    /* show submenu when parent is hovered or focused (keyboard) */
+    .menu .dropdown:hover .dropdown-content,
+    .menu .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
 }
