@@ -29,6 +29,12 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Digidither", sans-serif;
+    color: #50FF05;
+    text-shadow: 0 0 8px #50FF05;
+    letter-spacing: 2px;
+}
 
 a {
     color: white;
@@ -180,6 +186,45 @@ li{
 /* If images are missing, keep a neutral background so layout is visible */
 .container[style*="background-image"]:not([style*="url('"]){
     background-color: #666;
+}
+
+/* Three-column layout for project/detail pages
+   Left and right columns are 15% each, center is 70%.
+   This uses a separate class so it doesn't affect the homepage grid (.row).
+*/
+.three-column {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    gap: var(--tile-gap);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    /* allow page to expand below header like .row does */
+    flex: 1 1 auto;
+}
+
+.three-column > .col {
+    /* basic column container styling */
+    box-sizing: border-box;
+}
+
+.three-column .left,
+.three-column .right {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.three-column .center {
+    color: white;
+}
+
+/* On narrow screens stack columns (mobile-friendly). Matches existing mobile breakpoint behavior. */
+@media (max-width: 800px) {
+    .three-column {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 18px;
+    }
 }
 
 /* Unified mobile breakpoint: combine all mobile behaviors here */
