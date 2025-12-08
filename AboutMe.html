@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="skills/hobbies">
+            <h2 style="margin-top:18px;">KEY SKILLS:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Blueprints</li>
+                <li>3D Moddeling (Blender & Maya)</li>
+                <li>Mechanics design</li>
+                <li></li>
+            </ul>
+
+            <h2 style="margin-top:18px;">HOBBIES:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Hiking</li>
+                <li>Metal (Music not the material)</li>
+                <li>Cooking</li>
+                <li>Gardening (Succulents and my beloved basil)</li>
+            </ul>
+        </aside>
+
+        <main class="col center" aria-label="main content">
+            <h2>WHO AM I?</h2>
+
+            <div class="center-inner">
+
+
+                <div class="center-image">
+                    <img src="Assets/MeHeadshot.png" alt="Sam Lodge headshot">
+                </div>
+                                <div class="center-text">
+                    <p>Hi I am Sam Lodge, I'm a Games Design student at <a href="https://www.uca.ac.uk/" style="text-decoration: underline; color: #50FF05;">UCA</a>. At Collage I studied Engineering and Creative Digital Media where I made my first few games that eventaully led me onto going into games as a University Degree, I didn't really think games could be an option for me but now I have a good amount of experiance I am so glad I picked this over Engineering.</p>
+                    <br>
+                    <p>Like what you see? Send me an <a href="mailto:samlodge255@gmail.com" style="text-decoration: underline; color: #50FF05;">Email</a>.</p>
+                </div>
+
+            </div>
+
+        </main>
+
+        <aside class="col right" aria-label="aside">
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>
