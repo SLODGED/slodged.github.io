@@ -8,69 +8,46 @@
 </head>
 
 <body>
-    <!-- HEADER / NAV -->
-    <header>
-        <h1 class="logo">SAM<br>LODGE</h1>
-        <nav>
-            <ul class="menu">
-                <li class="dropdown">GAMES ▼
-                    <ul class="dropdown-content">
-                        <li><a href="#">Game 1</a></li>
-                        <li><a href="#">Game 2</a></li>
-                        <li><a href="#">etc</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">PROTOTYPES ▼
-                    <ul class="dropdown-content">
-                        <li><a href="#">Prototype 1</a></li>
-                        <li><a href="#">Prototype 2</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">OTHER PROJECTS ▼
-                    <ul class="dropdown-content">
-                        <li><a href="#">Project A</a></li>
-                        <li><a href="#">Project B</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">ABOUT ME</a></li>
-            </ul>
-        </nav>
-
-
-    </header>
+    
+<div id="navbar"></div>
 
         <div class="row">
 
             <!-- Column 1: square then tall -->
             <div class="column">
-                <a href="Games/FMP.html" class="container square" style="background-image: url('Assets/FMP.png');" aria-label="Final Major Project"></a>
-                <a href="Prototypes/Dungon.html" class="container tall" style="background-image: url('Assets/Dungon.png');" aria-label="Dungon"></a>
+                <a href="FMP.html" class="container square" style="background-image: url('Assets/FMP.png');" aria-label="Final Major Project"></a>
+                <a href="Dungon.html" class="container tall" style="background-image: url('Assets/Dungon.png');" aria-label="Dungon"></a>
             </div>
 
             <!-- Column 2: tall then square (alternating) -->
             <div class="column">
-                <a href="Games/FleshGunAdrenalineJunkie.html" class="container tall" style="background-image: url('Assets/FGAJ1.png');" aria-label="FLESH GUN: ADRENALINE JUNKIE"></a>
-                <a href="Prototypes/TheOortCloud.html" class="container square" style="background-image: url('Assets/OortCloud.png');" aria-label="The Oort Cloud"></a>
+                <a href="FleshGunAdrenalineJunkie.html" class="container tall" style="background-image: url('Assets/FGAJ1.png');" aria-label="FLESH GUN: ADRENALINE JUNKIE"></a>
+                <a href="TheOortCloud.html" class="container square" style="background-image: url('Assets/OortCloud.png');" aria-label="The Oort Cloud"></a>
             </div>
 
             <!-- Column 3: square then tall -->
             <div class="column">
-                <a href="Games/QUAD.html" class="container square" style="background-image: url('Assets/QUAD.jpg');" aria-label="Q.U.A.D."></a>
-                <a href="Prototypes/CurdKingdom.html" class="container tall" style="background-image: url('Assets/CurdKingdom.png');" aria-label="Curd Kingdom"></a>
+                <a href="QUAD.html" class="container square" style="background-image: url('Assets/QUAD.jpg');" aria-label="Q.U.A.D."></a>
+                <a href="CurdKingdom.html" class="container tall" style="background-image: url('Assets/CurdKingdom.png');" aria-label="Curd Kingdom"></a>
             </div>
 
             <!-- Column 4: tall then square -->
             <div class="column">
-                <a href="Games/LostLimbs.html" class="container tall" style="background-image: url('Assets/LostLimbs.png');" aria-label="Lost Limbs"></a>
-                <a href="Games/DraggedToHell.html" class="container square" style="background-image: url('Assets/Dragged.jpg');" aria-label="Dragged To HELL"></a>
+                <a href="LostLimbs.html" class="container tall" style="background-image: url('Assets/LostLimbs.png');" aria-label="Lost Limbs"></a>
+                <a href="DraggedToHell.html" class="container square" style="background-image: url('Assets/Dragged.jpg');" aria-label="Dragged To HELL"></a>
             </div>
 
         </div>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
 
 </body>
 </html>

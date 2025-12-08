@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="project info">
+
+            <h2 style="margin-top:18px;">SOFTWARE:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Engine 5.4</li>
+                <li>Blender</li>
+                <li>Substance Painter</li>
+                <li>Audacity</li>
+            </ul>
+        </aside>
+
+
+        <main class="col center" aria-label="main content">
+            <h2>LOST LIMBS</h2>
+            <p>Lost Limbs was the third and final game for my Rapid Games Prototyping unit. The brief for this game was “unknown project”, we could create anything we wanted to. I decided to set my sights high and make a third person fighting game with limb simulation. This was my first idea and coming off of FLESH GUN: ADRENALINE JUNKIE I had really started to get to grips with creating interesting mechanics with blueprints in Unreal. I set my sights high and started work.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zzQwkTBmANw?si=33H49emwuuTKGmA6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>Each limb has its own health and its own collision box, I had wanted to simulate collisions per polygon but the way I had built the system meant that would require time that I didn’t have</p>
+        </main>
+
+        <!-- Right column (15%) -->
+        <aside class="col right" aria-label="aside">
+            <p>Originally when I was coming up with the idea I was inspired by Metal Gear: Rising Revengance's Blade mode but I simplified it down to something more achiveable.</p>
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>

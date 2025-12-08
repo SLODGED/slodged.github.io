@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="project info">
+
+            <h2 style="margin-top:18px;">SOFTWARE:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Engine 5.6</li>
+                <li>Blender</li>
+            </ul>
+        </aside>
+
+
+        <main class="col center" aria-label="main content">
+            <h2>CRUD KINGDOM</h2>
+            <p>Curd Kingdom is a boomer shooter where you play as a block of Swiss cheese. I’ve had this idea for ages and been meaning to do something with it. This prototype was my first real use of Actor Components, something I wish I had used earlier. </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OhJpuOfnmDQ?si=epJ4hsKf3CfHjefL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>Overall, very fun to make but I ended up abandoning it as I quickly ran out of cheese-based puns.</p>
+        </main>
+
+        <!-- Right column (15%) -->
+        <aside class="col right" aria-label="aside">
+            <p>Here are some fun enemy names I came up with:</p>
+            <ul>
+                <li>Cheese Child</li>
+                <li>Brie Boy</li>
+                <li>Gruyere Girl</li>
+                <li>Emmental Exterminator</li>
+                <li>Parm Police</li>
+                <li>Swiss Solider</li>
+            </ul>
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>

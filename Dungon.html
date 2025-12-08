@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="project info">
+
+            <h2 style="margin-top:18px;">SOFTWARE:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Engine</li>
+                <li>Meow</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+        </aside>
+
+
+        <main class="col center" aria-label="main content">
+            <h2>DUNGON</h2>
+            <p>Yes, its dungeon misspelt. Dungon was my second project over the summer of 2025, I just wanted to see what I could do before starting my final major project at university. I primarily focused on making structuring the game correctly so I could create a large variety of weapons.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Uy4fG5yrbn0?si=1zv4U8iIuJ4O-Gvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>I was also experimenting with creating materials in Material Maker, I chose Material Maker over substance painter because I personally hate adobe and would rather struggle with non-standard software. Also, I wanted the player to be a stickman but also 3D, so I had originally made it as a pixel art but then I wanted to animate it but Unreal doesn’t have 2D skeletons so I used Illustrator (unfortunately) to trace it as a vector then imported into Blender the separated the limbs and rigged it.</p>
+        </main>
+
+        <!-- Right column (15%) -->
+        <aside class="col right" aria-label="aside">
+            <p>The stickman was intended to be a photograph of me instead but I could never get the lighting right in my photograps:</p>
+            <img src="Assets/Me.png">
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>

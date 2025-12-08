@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="project info">
+
+            <h2 style="margin-top:18px;">SOFTWARE:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Engine 5.4</li>
+                <li>Blender</li>
+            </ul>
+        </aside>
+
+
+        <main class="col center" aria-label="main content">
+            <h2>DRAGGED TO HELL</h2>
+            <p>Dragged To Hell is a third person action game where you play as the devil in heaven and use a massive chain and drag people down into hell. This was made for the UCA game jam with the theme of Chain reaction over the course of three days, I took the theme very literally but the actual plot, if you can call it that, for the game wasn’t implemented until a few hours before submission.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YYeb5nvd--U?si=NZdB25WsUDbA8q0y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>There are three different enemy types, a base enemy who runs at the player then punches them when they are in range. The “Big Guy” is much larger than the other enemies and hits a lot harder but also when you are dragging him with your chain you can swing him into other enemies to kill them. Then there is the “Rock Thrower” who throws projectiles at the player – I felt like there wasn’t enough enemy variety so I quicky implemented this one.</p>
+
+        </main>
+
+        <!-- Right column (15%) -->
+        <aside class="col right" aria-label="aside">
+            <p>My original idea for the game jam was to create a chain reaction of infrastructre that you had to keep from collapsing which I focused on for a day or two before moving onto the game as you see it now.</p>
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>

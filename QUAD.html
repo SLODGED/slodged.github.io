@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="project info">
+
+            <h2 style="margin-top:18px;">SOFTWARE:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Engine 5.4</li>
+                <li>Maya</li>
+                <li>Blender</li>
+                <li>Substance Painter</li>
+            </ul>
+        </aside>
+
+
+        <main class="col center" aria-label="main content">
+            <h2>Q.U.A.D.</h2>
+            <p>Q.U.A.D. was the first game made for my Rapid Games Prototyping unit. The brief was to create a 30 second mini game, I came up with the idea of Drone Racing immediately and started working on a prototype. I really struggled with creating the movement, but I learnt a lot from it. The final game is a Quad Copter racing game where you have 30 seconds to complete the track.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BDT1HbFllro?si=CVfIKln5NZUygKSd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>The prototype was made in three weeks; I rushed the final level because I wanted to start work on the next game in the unit which would become FLESH GUN: ADRENALINE JUNKIE.</p>
+        </main>
+
+        <!-- Right column (15%) -->
+        <aside class="col right" aria-label="aside">
+            <p>I've been meaing to do a mobile port for the longest time, maybe one day I'll get around to it.</p>
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>
