@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    hyphens: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: white;
     text-decoration: none;
+    text-decoration: underline;
 }
 
 header {

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sam Lodge – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="three-column" role="main" aria-label="Project page layout">
+
+        <aside class="col left" aria-label="project info">
+
+            <h2 style="margin-top:18px;">SOFTWARE:</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Unreal Engine 5.6</li>
+                <li>Blender</li>
+            </ul>
+        </aside>
+
+
+        <main class="col center" aria-label="main content">
+            <h2>FOOLS GOLD</h2>
+            <p>Fools Gold was my Final Major Project at university, it is a First-person Action Role-Playing Game built in Unreal Engine 5. I built the game from the ground up with help from <a style="color: #50FF05;" href="https://www.maddiewdesign.com/About.html">Maddie Wardle</a> in creating the UI elements and poster.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YtZ4fKLkRsQ?si=pcacNk6_ZvioYifF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+            <p>The first thing I did was to start creating a micro GDD where I outlined my basic ideas of what I wanted to create.</p>
+            <p>Have a look at the micro GDD here:</p>
+            <object data="Assets/Micro GDD.pdf" type="application/pdf" width="100%" height="60%">
+                <p>
+                    Your browser does not support PDFs. Get the PDF <a href="Assets/OortGDD.pdf">Here</a>.
+                </p>
+            </object>
+            <p>The whole process was split into Pre-Production and Production, the Pre-Production phase lasted 10 weeks and was primarily focused on creating prototype mechanics and the overall feel of the game. I achived this by creating a test level that allowed me to put together all fo the main elements of the game together in a stable enviroment.</p>
+            <p>The character creator is by far my favorite feature of the game and uses morph targets and custom materials to create all sorts of unique characters.</p>
+            <p>Have a look at the Pre-Productionprototype here:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wJ_zCs0bGzQ?si=qMDaXV-AFKvr8yQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>I spent the majority of pre-production completly focusing on building out a strong systematic base for all of the games mechaics. All of the Weapons, Spells, Quests, and Dialouge are all driven by Data Tables meaning adding new content is as easy as dropping in new assets and writing the appropriate data.</p>
+            <p>My main goal with the prototype was to find out what I wanted the game to be, I didn't have a strong idea of what I wanted the plot to be so I decided to focus on what I do best and focused soley on the gameplay.</p>
+            <p>But the game needed a plot and a level to be complete. So after working on the mechanics I worked out a basic plot and started work on the level. I decided rahter than spending ages creating textures and trim-sheets I made a fully procedural material system using a custom triplanar function and simplex noise.</p>
+            <p>By the end of the Production phase I had a fully completed game, the final 10% of the project was the hardest I've ever worked but I am so proud of where its ended up. Take a look at the final gameplay here:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/gWLHjgRapoQ?si=mnzkTJ205et1m_LG"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </main>
+
+        <aside class="col right" aria-label="aside">
+            <h2>HIGHLIGHTS</h2>
+            <ul style="padding-left:0; list-style:none; color:#ddd;">
+                <li>Character Creator</li>
+                <li>Melee & Magic Combat</li>
+                <li>Fully Procedural Materials</li>
+            </ul>
+        </aside>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('nav.html')
+    .then(r => { if(!r.ok) throw new Error('nav load failed'); return r.text(); })
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(err => console.error('Failed to load nav:', err));
+});
+</script>
+
+</body>
+</html>
